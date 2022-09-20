@@ -6,10 +6,10 @@ export class Client extends Document {
   @Prop({ required: true })
   clientName: string;
 
-  @Prop({ required: true })
+  @Prop()
   phone: string;
 
-  @Prop({ required: true })
+  @Prop()
   email: string;
 
   @Prop()
