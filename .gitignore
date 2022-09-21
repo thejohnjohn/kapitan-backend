@@ -5,6 +5,9 @@
 # Config Files
 .env
 
+# Mock Files
+/mocks/generator
+
 # Logs
 logs
 *.log

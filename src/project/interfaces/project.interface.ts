@@ -9,5 +9,5 @@ export interface IProject extends Document {
   readonly projectBriefing: string;
   readonly projectLeader: string;
   readonly techHourValue: string;
-  readonly projectTeam: string;
+  readonly projectTeam: string[];
 }
