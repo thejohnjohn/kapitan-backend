@@ -1,10 +1,10 @@
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Types } from 'mongoose';
+import { Document } from 'mongoose';
 
 @Schema()
 export class Client extends Document {
   @Prop({ required: true })
-  clientName: string;
+  name: string;
 
   @Prop()
   phone: string;

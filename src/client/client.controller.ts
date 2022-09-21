@@ -7,10 +7,13 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
+
 import { ClientService } from './client.service';
 import { CreateClientDto } from './dto/create-client.dto';
 import { UpdateClientDto } from './dto/update-client.dto';
 
+@ApiTags('Client')
 @Controller('client')
 export class ClientController {
   constructor(private readonly clientService: ClientService) {}
@@ -26,17 +29,20 @@ export class ClientController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.clientService.findOne(+id);
+  findOne(@Param('id') clientId: string) {
+    return this.clientService.findOne(clientId);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateClientDto: UpdateClientDto) {
-    return this.clientService.update(+id, updateClientDto);
+  update(
+    @Param('id') clientId: string,
+    @Body() updateClientDto: UpdateClientDto,
+  ) {
+    return this.clientService.update(clientId, updateClientDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.clientService.remove(+id);
+  remove(@Param('id') clientId: string) {
+    return this.clientService.remove(clientId);
   }
 }
