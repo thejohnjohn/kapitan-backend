@@ -1,26 +1,58 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
+
+import { IProject } from './interfaces/project.interface';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
+import { Project } from './schemas/project.schema';
 
 @Injectable()
 export class ProjectService {
-  create(createProjectDto: CreateProjectDto) {
-    return 'This action adds a new project';
+  constructor(
+    @InjectModel(Project.name) private readonly projectModel: Model<Project>,
+  ) {}
+
+  public async findAll(): Promise<Project[]> {
+    return await this.projectModel.find().exec();
   }
 
-  findAll() {
-    return `This action returns all project`;
+  public async findOne(projectId: string): Promise<Project> {
+    const project = await this.projectModel
+      .findById({ _id: projectId })
+      .populate('project')
+      .exec();
+
+    if (!project) {
+      throw new NotFoundException(`Project #${projectId} not found`);
+    }
+
+    return project;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} project`;
+  public async create(createProjectDto: CreateProjectDto): Promise<IProject> {
+    const newProject = await this.projectModel.create(createProjectDto);
+    return newProject;
   }
 
-  update(id: number, updateProjectDto: UpdateProjectDto) {
-    return `This action updates a #${id} project`;
+  public async update(
+    projectId: string,
+    updateProjectDto: UpdateProjectDto,
+  ): Promise<IProject> {
+    const existingProject = await this.projectModel.findByIdAndUpdate(
+      { _id: projectId },
+      updateProjectDto,
+    );
+
+    if (!existingProject) {
+      throw new NotFoundException(`Project #${projectId} not found`);
+    }
+
+    return existingProject;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} project`;
+  public async remove(projectId: string): Promise<any> {
+    const deletedProject = await this.projectModel.findByIdAndRemove(projectId);
+    return deletedProject;
   }
 }
