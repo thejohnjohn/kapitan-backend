@@ -4,6 +4,9 @@ export class CreateClientDto {
   name: string;
 
   @ApiProperty({ required: true })
+  lastName: string;
+
+  @ApiProperty({ required: true })
   phone: string;
 
   @ApiProperty({ required: true })
