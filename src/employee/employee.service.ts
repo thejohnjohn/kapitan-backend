@@ -1,26 +1,62 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
+
+import { IEmployee } from './interfaces/employee.interface';
 import { CreateEmployeeDto } from './dto/create-employee.dto';
 import { UpdateEmployeeDto } from './dto/update-employee.dto';
+import { Employee } from './schemas/employee.schema';
 
 @Injectable()
 export class EmployeeService {
-  create(createEmployeeDto: CreateEmployeeDto) {
-    return 'This action adds a new employee';
+  constructor(
+    @InjectModel(Employee.name) private readonly employeeModel: Model<Employee>,
+  ) {}
+
+  public async findAll(): Promise<Employee[]> {
+    return await this.employeeModel.find().exec();
   }
 
-  findAll() {
-    return `This action returns all employee`;
+  public async findOne(employeeId: string): Promise<Employee> {
+    const employee = await this.employeeModel
+      .findById({ _id: employeeId })
+      .populate('employee')
+      .exec();
+
+    if (!employee) {
+      throw new NotFoundException(`Employee #${employeeId} not found`);
+    }
+
+    return employee;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} employee`;
+  public async create(
+    createEmployeeDto: CreateEmployeeDto,
+  ): Promise<IEmployee> {
+    const newEmployee = await this.employeeModel.create(createEmployeeDto);
+    return newEmployee;
   }
 
-  update(id: number, updateEmployeeDto: UpdateEmployeeDto) {
-    return `This action updates a #${id} employee`;
+  public async update(
+    employeeId: string,
+    updateEmployeeDto: UpdateEmployeeDto,
+  ): Promise<IEmployee> {
+    const existingEmployee = await this.employeeModel.findByIdAndUpdate(
+      { _id: employeeId },
+      updateEmployeeDto,
+    );
+
+    if (!existingEmployee) {
+      throw new NotFoundException(`Employee #${employeeId} not found`);
+    }
+
+    return existingEmployee;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} employee`;
+  public async remove(employeeId: string): Promise<any> {
+    const deletedEmployee = await this.employeeModel.findByIdAndRemove(
+      employeeId,
+    );
+    return deletedEmployee;
   }
 }
