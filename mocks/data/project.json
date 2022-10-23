@@ -1,0 +1,132 @@
+[
+  {
+    "projectName": "syndicate next-generation supply-chains 1.0",
+    "projectOwner": {
+      "firstName": "Chanda",
+      "lastName": "Silva"
+    },
+    "techHoursQuantity": 60,
+    "deadline": "01/10/2022",
+    "projectPriority": "high",
+    "projectBriefing": "Voluptatum quis aut non corporis temporibus quia autem.\nDolor est commodi.",
+    "projectLeader": {
+      "firstName": "Luis",
+      "lastName": "Saraiva"
+    },
+    "techHourValue": "200.00",
+    "projectTeam": [
+      {
+        "firstName": "Alberi",
+        "lastName": "Oliveira"
+      },
+      {
+        "firstName": "Nidia",
+        "lastName": "Oliveira"
+      },
+      {
+        "firstName": "Neisvaldo",
+        "lastName": "Melo"
+      }
+    ]
+  },
+  {
+    "projectName": "harness next-generation portals 1.0",
+    "projectOwner": {
+      "name": "Chanda",
+      "lastName": "Silva",
+      "phone": "(79) 3344-3867",
+      "email": "clonghorne2@dion.ne.jp",
+      "site": "https://nytimes.com",
+      "CNPJ": "88.281.885/0001-95"
+    },
+    "techHoursQuantity": 60,
+    "deadline": "29/09/2022",
+    "projectPriority": "medium",
+    "projectBriefing": "Cupiditate quis quisquam.\nIncidunt et impedit ullam dicta.",
+    "projectLeader": {
+      "firstName": "Luis",
+      "lastName": "Saraiva",
+      "email": "luis_saraiva@kapitan.com",
+      "phone": "+55 (73) 24583-4039",
+      "position": "Gerente",
+      "photo": "./images/luis-saraiva.png"
+    },
+    "techHourValue": "200.00",
+    "projectTeam": [
+      {
+        "firstName": "Alberi",
+        "lastName": "Oliveira",
+        "email": "alberi_oliveira@kapitan.com",
+        "phone": "+55 (61) 66700-4933",
+        "position": "Designer",
+        "photo": "./images/alberi-oliveira.png"
+      },
+      {
+        "firstName": "Nidia",
+        "lastName": "Oliveira",
+        "email": "nidia_oliveira@kapitan.com",
+        "phone": "+55 (64) 92303-4218",
+        "position": "Backend",
+        "photo": "./images/nidia-oliveira.png"
+      },
+      {
+        "firstName": "Neisvaldo",
+        "lastName": "Melo",
+        "email": "neisvaldo_melo@kapitan.com",
+        "phone": "+55 (37) 18052-2298",
+        "position": "Frontend",
+        "photo": "./images/neisvaldo-melo.png"
+      }
+    ]
+  },
+  {
+    "projectName": "enable vertical methodologies 1.0",
+    "projectOwner": {
+      "name": "Abigael",
+      "lastName": "Thomas",
+      "phone": "(28) 3209-3530",
+      "email": "ashowl4@mail.ru",
+      "site": "https://berkeley.edu",
+      "CNPJ": "89.544.687/0001-30"
+    },
+    "techHoursQuantity": 60,
+    "deadline": "01/10/2022",
+    "projectPriority": "low",
+    "projectBriefing": "Cum aut delectus non quam.\nEt eius ullam id itaque dolorem ipsam.",
+    "projectLeader": {
+      "firstName": "Luis",
+      "lastName": "Saraiva",
+      "email": "luis_saraiva@kapitan.com",
+      "phone": "+55 (73) 24583-4039",
+      "position": "Gerente",
+      "photo": "./images/luis-saraiva.png"
+    },
+    "techHourValue": "200.00",
+    "projectTeam": [
+      {
+        "firstName": "Alberi",
+        "lastName": "Oliveira",
+        "email": "alberi_oliveira@kapitan.com",
+        "phone": "+55 (61) 66700-4933",
+        "position": "Designer",
+        "photo": "./images/alberi-oliveira.png"
+      },
+      {
+        "firstName": "Nidia",
+        "lastName": "Oliveira",
+        "email": "nidia_oliveira@kapitan.com",
+        "phone": "+55 (64) 92303-4218",
+        "position": "Backend",
+        "photo": "./images/nidia-oliveira.png"
+      },
+      {
+        "firstName": "Neisvaldo",
+        "lastName": "Melo",
+        "email": "neisvaldo_melo@kapitan.com",
+        "phone": "+55 (37) 18052-2298",
+        "position": "Frontend",
+        "photo": "./images/neisvaldo-melo.png"
+      }
+    ]
+  }
+]

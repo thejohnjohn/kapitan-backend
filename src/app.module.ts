@@ -6,7 +6,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { ClientModule } from './client/client.module';
-
+import { EmployeeModule } from './employee/employee.module';
+import { ProjectModule } from './project/project.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -21,6 +22,8 @@ import { ClientModule } from './client/client.module';
       inject: [ConfigService],
     }),
     ClientModule,
+    EmployeeModule,
+    ProjectModule,
   ],
   controllers: [AppController],
   providers: [AppService],

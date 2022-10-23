@@ -1,0 +1,74 @@
+[
+  {
+    "firstName": "Katias",
+    "lastName": "Moraes",
+    "email": "katias_moraes@kapitan.com",
+    "phone": "+55 (64) 69629-0068",
+    "position": "Frontend",
+    "photo": "./images/katias-moraes.png",
+    "payment": "6500.00"
+  },
+  {
+    "firstName": "Marilene",
+    "lastName": "Silva",
+    "email": "marilene_silva@kapitan.com",
+    "phone": "+55 (94) 84432-0447",
+    "position": "QA",
+    "photo": "./images/marilene-silva.png",
+    "payment": "6000.00"
+  },
+  {
+    "firstName": "Fabio",
+    "lastName": "Martins",
+    "email": "fabio_martins@kapitan.com",
+    "phone": "+55 (18) 65507-0849",
+    "position": "DevOps",
+    "photo": "./images/fabio-martins.png",
+    "payment": "8000.00"
+  },
+  {
+    "firstName": "Luis",
+    "lastName": "Saraiva",
+    "email": "luis_saraiva@kapitan.com",
+    "phone": "+55 (73) 24583-4039",
+    "position": "Gerente",
+    "photo": "./images/luis-saraiva.png",
+    "payment": "15000.00"
+  },
+  {
+    "firstName": "Alberi",
+    "lastName": "Oliveira",
+    "email": "alberi_oliveira@kapitan.com",
+    "phone": "+55 (61) 66700-4933",
+    "position": "Designer",
+    "photo": "./images/alberi-oliveira.png",
+    "payment": "6000.00"
+  },
+  {
+    "firstName": "Nidia",
+    "lastName": "Oliveira",
+    "email": "nidia_oliveira@kapitan.com",
+    "phone": "+55 (64) 92303-4218",
+    "position": "Backend",
+    "photo": "./images/nidia-oliveira.png",
+    "payment": "9000.00"
+  },
+  {
+    "firstName": "Neisvaldo",
+    "lastName": "Melo",
+    "email": "neisvaldo_melo@kapitan.com",
+    "phone": "+55 (37) 18052-2298",
+    "position": "Frontend",
+    "photo": "./images/neisvaldo-melo.png",
+    "payment": "6500.00"
+  },
+  {
+    "firstName": "Waldemir",
+    "lastName": "Oliveira",
+    "email": "waldemir_oliveira@kapitan.com",
+    "phone": "+55 (25) 41256-8640",
+    "position": "QA",
+    "photo": "./images/waldemir-oliveira.png",
+    "payment": "6000.00"
+  }
+]

@@ -1,13 +1,18 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
+interface IPeople {
+  firstName: string;
+  lastName: string;
+  position: string;
+}
 @Schema()
 export class Project extends Document {
   @Prop()
   projectName: string;
 
   @Prop()
-  projectOwner: string;
+  projectOwner: IPeople;
 
   @Prop()
   techHoursQuantity: string;
@@ -22,13 +27,13 @@ export class Project extends Document {
   projectBriefing: string;
 
   @Prop()
-  projectLeader: string;
+  projectLeader: IPeople;
 
   @Prop()
   techHourValue: string;
 
   @Prop()
-  projectTeam: string;
+  projectTeam: [IPeople];
 }
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);

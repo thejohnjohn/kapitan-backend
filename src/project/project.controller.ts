@@ -13,6 +13,9 @@ import { ProjectService } from './project.service';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 
+import { ClientService } from 'src/client/client.service';
+import { EmployeeService } from 'src/employee/employee.service';
+
 @ApiTags('Project')
 @Controller('project')
 export class ProjectController {
@@ -29,17 +32,20 @@ export class ProjectController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.projectService.findOne(+id);
+  findOne(@Param('id') clientId: string) {
+    return this.projectService.findOne(clientId);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateProjectDto: UpdateProjectDto) {
-    return this.projectService.update(+id, updateProjectDto);
+  update(
+    @Param('id') clientId: string,
+    @Body() updateProjectDto: UpdateProjectDto,
+  ) {
+    return this.projectService.update(clientId, updateProjectDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.projectService.remove(+id);
+  remove(@Param('id') clientId: string) {
+    return this.projectService.remove(clientId);
   }
 }

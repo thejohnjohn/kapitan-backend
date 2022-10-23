@@ -1,30 +1,53 @@
+import { MaxLength, IsNotEmpty, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
+interface IPeople {
+  firstName: string;
+  lastName: string;
+}
+
 export class CreateProjectDto {
-  @ApiProperty()
-  private projectName: string;
+  // @ApiProperty()()
+  @IsString()
+  @IsNotEmpty()
+  readonly projectName: string;
 
-  @ApiProperty()
-  private projectOwner: string;
+  // @ApiProperty()()
+  readonly projectOwner: IPeople;
 
-  @ApiProperty()
-  private techHoursQuantity: string;
+  // @ApiProperty()()
+  @IsString()
+  @MaxLength(30)
+  @IsNotEmpty()
+  readonly techHoursQuantity: string;
 
-  @ApiProperty()
-  private deadline: string;
+  // @ApiProperty()()
+  @IsString()
+  @MaxLength(30)
+  @IsNotEmpty()
+  readonly deadline: string;
 
-  @ApiProperty()
-  private projectPriority: string;
+  // @ApiProperty()()
+  @IsString()
+  @MaxLength(30)
+  @IsNotEmpty()
+  readonly projectPriority: string;
 
-  @ApiProperty()
-  private projectBriefing: string;
+  // @ApiProperty()()
+  @IsString()
+  @MaxLength(30)
+  @IsNotEmpty()
+  readonly projectBriefing: string;
 
-  @ApiProperty()
-  private projectLeader: string;
+  // @ApiProperty()()
+  readonly projectLeader: IPeople;
 
-  @ApiProperty()
-  private techHourValue: string;
+  // @ApiProperty()()
+  @IsString()
+  @MaxLength(30)
+  @IsNotEmpty()
+  readonly techHourValue: string;
 
-  @ApiProperty()
-  private projectTeam: string[];
+  // @ApiProperty()()
+  readonly projectTeam: [IPeople];
 }
