@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "25463b71-1a4c-4e04-bed8-0528f956e5ab",
+		"name": "Kapitan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inserts",
+			"item": [
+				{
+					"name": "Insert one employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"firstName\": \"Katias\",\n    \"lastName\": \"Moraes\",\n    \"email\": \"katias_moraes@kapitan.com\",\n    \"phone\": \"+55 (64) 69629-0068\",\n    \"position\": \"Frontend\",\n    \"photo\": \"./images/katias-moraes.png\",\n    \"payment\": \"6500.00\"\n  },\n  {\n    \"firstName\": \"Marilene\",\n    \"lastName\": \"Silva\",\n    \"email\": \"marilene_silva@kapitan.com\",\n    \"phone\": \"+55 (94) 84432-0447\",\n    \"position\": \"QA\",\n    \"photo\": \"./images/marilene-silva.png\",\n    \"payment\": \"6000.00\"\n  },\n  {\n    \"firstName\": \"Fabio\",\n    \"lastName\": \"Martins\",\n    \"email\": \"fabio_martins@kapitan.com\",\n    \"phone\": \"+55 (18) 65507-0849\",\n    \"position\": \"DevOps\",\n    \"photo\": \"./images/fabio-martins.png\",\n    \"payment\": \"8000.00\"\n  },\n  {\n    \"firstName\": \"Luis\",\n    \"lastName\": \"Saraiva\",\n    \"email\": \"luis_saraiva@kapitan.com\",\n    \"phone\": \"+55 (73) 24583-4039\",\n    \"position\": \"Gerente\",\n    \"photo\": \"./images/luis-saraiva.png\",\n    \"payment\": \"15000.00\"\n  },\n  {\n    \"firstName\": \"Alberi\",\n    \"lastName\": \"Oliveira\",\n    \"email\": \"alberi_oliveira@kapitan.com\",\n    \"phone\": \"+55 (61) 66700-4933\",\n    \"position\": \"Designer\",\n    \"photo\": \"./images/alberi-oliveira.png\",\n    \"payment\": \"6000.00\"\n  },\n  {\n    \"firstName\": \"Nidia\",\n    \"lastName\": \"Oliveira\",\n    \"email\": \"nidia_oliveira@kapitan.com\",\n    \"phone\": \"+55 (64) 92303-4218\",\n    \"position\": \"Backend\",\n    \"photo\": \"./images/nidia-oliveira.png\",\n    \"payment\": \"9000.00\"\n  },\n  {\n    \"firstName\": \"Neisvaldo\",\n    \"lastName\": \"Melo\",\n    \"email\": \"neisvaldo_melo@kapitan.com\",\n    \"phone\": \"+55 (37) 18052-2298\",\n    \"position\": \"Frontend\",\n    \"photo\": \"./images/neisvaldo-melo.png\",\n    \"payment\": \"6500.00\"\n  },\n  {\n    \"firstName\": \"Waldemir\",\n    \"lastName\": \"Oliveira\",\n    \"email\": \"waldemir_oliveira@kapitan.com\",\n    \"phone\": \"+55 (25) 41256-8640\",\n    \"position\": \"QA\",\n    \"photo\": \"./images/waldemir-oliveira.png\",\n    \"payment\": \"6000.00\"\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/employee",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert clients",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"Nicoline\",\n        \"lastName\": \"Freitas\",\n        \"phone\": \"(68) 2555-3847\",\n        \"email\": \"ncrellin0@sina.com.cn\",\n        \"site\": \"http://youter.com\",\n        \"CNPJ\": \"38.115.537/0001-70\"\n    },\n    {\n        \"name\": \"Idalina\",\n        \"lastName\": \"Barbosa\",\n        \"phone\": \"(73) 3505-9414\",\n        \"email\": \"ilaurens1@bravesites.com\",\n        \"site\": \"https://goodreads.com\",\n        \"CNPJ\": \"73.289.473/0001-24\"\n    },\n    {\n        \"name\": \"Chanda\",\n        \"lastName\": \"Silva\",\n        \"phone\": \"(79) 3344-3867\",\n        \"email\": \"clonghorne2@dion.ne.jp\",\n        \"site\": \"https://nytimes.com\",\n        \"CNPJ\": \"88.281.885/0001-95\"\n    },\n    {\n        \"name\": \"Cherlyn\",\n        \"lastName\": \"Antunes\",\n        \"phone\": \"(22) 3750-2555\",\n        \"email\": \"clacaze3@sciencedirect.com\",\n        \"site\": \"https://webeden.co.uk\",\n        \"CNPJ\": \"35.750.611/0001-31\"\n    },\n    {\n        \"name\": \"Abigael\",\n        \"lastName\": \"Thomas\",\n        \"phone\": \"(28) 3209-3530\",\n        \"email\": \"ashowl4@mail.ru\",\n        \"site\": \"https://berkeley.edu\",\n        \"CNPJ\": \"89.544.687/0001-30\"\n    },\n    {\n        \"name\": \"Vitoria\",\n        \"lastName\": \"Santos\",\n        \"phone\": \"(66) 3317-6217\",\n        \"email\": \"vlismer5@hugedomains.com\",\n        \"site\": \"http://purevolume.com\",\n        \"CNPJ\": \"47.763.770/0001-50\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert a project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"projectName\": \"syndicate next-generation supply-chains 1.0\",\n    \"projectOwner\": {\n      \"firstName\": \"Chanda\",\n      \"lastName\": \"Silva\"\n    },\n    \"techHoursQuantity\": 60,\n    \"deadline\": \"01/10/2022\",\n    \"projectPriority\": \"high\",\n    \"projectBriefing\": \"Voluptatum quis aut non corporis temporibus quia autem.\\nDolor est commodi.\",\n    \"projectLeader\": {\n      \"firstName\": \"Luis\",\n      \"lastName\": \"Saraiva\"\n    },\n    \"techHourValue\": \"200.00\",\n    \"projectTeam\": [\n      {\n        \"firstName\": \"Alberi\",\n        \"lastName\": \"Oliveira\"\n      },\n      {\n        \"firstName\": \"Nidia\",\n        \"lastName\": \"Oliveira\"\n      },\n      {\n        \"firstName\": \"Neisvaldo\",\n        \"lastName\": \"Melo\"\n      }\n    ]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/project",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"project"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000"
+		}
+	]
+}
