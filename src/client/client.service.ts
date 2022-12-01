@@ -5,16 +5,18 @@ import { InjectModel } from '@nestjs/mongoose';
 import { IClient } from './interfaces/client.interface';
 import { CreateClientDto } from './dto/create-client.dto';
 import { UpdateClientDto } from './dto/update-client.dto';
-import { Client } from './schemas/client.schema';
+import { Client, ClientDocument } from './schemas/client.schema';
 
 @Injectable()
 export class ClientService {
   constructor(
-    @InjectModel(Client.name) private readonly clientModel: Model<Client>,
+    @InjectModel(Client.name)
+    private readonly clientModel: Model<ClientDocument>,
   ) {}
 
   public async findAll(): Promise<Client[]> {
-    return await this.clientModel.find().exec();
+    const list = await this.clientModel.find().exec();
+    return list;
   }
 
   public async findOne(clientId: string): Promise<Client> {
