@@ -30,15 +30,16 @@ export class ProjectService {
     return project;
   }
 
-  public async create(createProjectDto: CreateProjectDto): Promise<IProject> {
+  public async create(createProjectDto: CreateProjectDto): Promise<any> {
     const newProject = await this.projectModel.create(createProjectDto);
+
     return newProject;
   }
 
   public async update(
     projectId: string,
     updateProjectDto: UpdateProjectDto,
-  ): Promise<IProject> {
+  ): Promise<any> {
     const existingProject = await this.projectModel.findByIdAndUpdate(
       { _id: projectId },
       updateProjectDto,

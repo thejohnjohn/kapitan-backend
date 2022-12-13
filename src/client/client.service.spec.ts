@@ -1,25 +1,32 @@
 import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
 import { Model } from 'mongoose';
+import { v4 as uuidv4 } from 'uuid';
 
+import { CreateClientDto } from './dto/create-client.dto';
 import { ClientService } from './client.service';
 import { Client } from './schemas/client.schema';
-
-const mockClient = {
-  name: 'Nicoline',
-  lastName: 'Freitas',
-  phone: '(68) 2555-3847',
-  email: 'ncrellin0@sina.com.cn',
-  site: 'http://youter.com',
-  CNPJ: '38.115.537/0001-70',
-};
+import { IClient } from './interfaces/client.interface';
 
 describe('📂 SERVICE - Client module', () => {
   let service: ClientService;
   let model: Model<Client>;
 
-  const clientList = [
+  const mockUUID = uuidv4();
+
+  const mockClient: CreateClientDto = {
+    _id: mockUUID, 
+    name: 'Nicoline',
+    lastName: 'Freitas',
+    phone: '(68) 2555-3847',
+    email: 'ncrellin0@sina.com.cn',
+    site: 'http://youter.com',
+    CNPJ: '38.115.537/0001-70',
+  };
+  
+  const clientList: CreateClientDto[]= [
     {
+      _id: uuidv4(),
       name : "Abigael",
       lastName : "Thomas",
       phone : "(28) 3209-3530",
@@ -28,6 +35,7 @@ describe('📂 SERVICE - Client module', () => {
       CNPJ : "89.544.687/0001-30"
     },
     {
+      _id: uuidv4(),
       name : "Vitoria",
       lastName : "Santos",
       phone : "(66) 3317-6217",
@@ -66,6 +74,7 @@ describe('📂 SERVICE - Client module', () => {
     jest.spyOn(model, 'create').mockImplementationOnce(() =>
       Promise.resolve(
         {
+          _id: mockUUID,
           name: 'Nicoline',
           lastName: 'Freitas',
           phone: '(68) 2555-3847',
@@ -78,6 +87,7 @@ describe('📂 SERVICE - Client module', () => {
 
     const newClient = await service.create(
       {
+        _id: mockUUID,
         name: 'Nicoline',
         lastName: 'Freitas',
         phone: '(68) 2555-3847',
@@ -99,11 +109,27 @@ describe('📂 SERVICE - Client module', () => {
     expect(allClients).toEqual(clientList);
   });
 
-  it('#UPDATE - Update a client', async () => {
-    jest.spyOn(model, 'updateOne').mockImplementationOnce(fn);
+  it('#UPDATE - Update a client by id', async () => {
+    jest.spyOn(model, 'update').mockImplementationOnce( () =>
+      Promise.resolve(
+        {
+        _id: mockUUID,
+        name: 'Nicoline',
+        lastName: 'Freitas',
+        phone: '(68) 2555-3847',
+        email: 'ncrellin0@sina.com.cn',
+        site: 'http://youter.com',
+        CNPJ: '38.115.537/0001-70',
+      } as any 
+      );
+    );
 
-    expect(1 + 1).toEqual(2);
-  })
+    expect(1+1).toBe(2);
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
 
 });
 

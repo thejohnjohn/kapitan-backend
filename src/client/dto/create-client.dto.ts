@@ -5,9 +5,13 @@ import {
   IsFQDN,
   IsPhoneNumber,
   Matches,
+  IsUUID,
 } from 'class-validator';
 
 export class CreateClientDto {
+  @IsUUID('4')
+  _id?: string;
+
   @Length(5, 15)
   @ApiProperty({ required: true })
   name: string;

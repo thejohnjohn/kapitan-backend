@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
+// eslint-disable-next-line prettier/prettier
 interface IPeople {
   firstName: string;
   lastName: string;
@@ -11,8 +12,8 @@ export class Project extends Document {
   @Prop()
   projectName: string;
 
-  @Prop()
-  projectOwner: IPeople;
+  @Prop({ type: Object })
+  projectOwner: any;
 
   @Prop()
   techHoursQuantity: string;
@@ -26,14 +27,14 @@ export class Project extends Document {
   @Prop()
   projectBriefing: string;
 
-  @Prop()
-  projectLeader: IPeople;
+  @Prop({ type: Object })
+  projectLeader: any;
 
   @Prop()
   techHourValue: string;
 
-  @Prop()
-  projectTeam: [IPeople];
+  @Prop({ type: Array })
+  projectTeam: any;
 }
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);
